@@ -29,7 +29,7 @@ export class EventService {
         console.log(`Event with the following id has been deleted: ${id}`);
     }
 
-    addVisitorToEvent(eventId: number, visitor: Visitor) {
+    addVisitorToEvent(eventId: number, visitor: Visitor): void {
         const wantedEvent = this._events.get(eventId);
 
         if(wantedEvent) {
@@ -40,7 +40,7 @@ export class EventService {
         }
     }
 
-    removeVisitorFromEvent(eventId: number, visitor: Visitor) {
+    removeVisitorFromEvent(eventId: number, visitor: Visitor): void {
         const unWantedEvent = this._events.get(eventId);
 
         if(unWantedEvent) {
