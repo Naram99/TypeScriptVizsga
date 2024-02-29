@@ -22,5 +22,17 @@ export class Event {
             this._id = v;
     }
 
-    
+    setVisitor(visitor: Visitor): void {
+        this.visitors.set(visitor.id, visitor);
+    }
+
+    removeVisitor(id: number): void {
+        this.visitors.delete(id);
+    }
+
+    listVisitors(): void {
+        this.visitors.forEach(visitor => {
+            console.log(visitor.name);
+        })
+    }
 }
