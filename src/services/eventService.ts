@@ -1,15 +1,23 @@
 import { Event } from "../models/event";
 import { Type } from "../models/type";
 import { Visitor } from "../models/visitor";
+import { Service } from "./service";
 
 export class EventService {
     private _events: Map<number, Event> = new Map();
+
+    
+    public get events() : Map<number, Event> {
+        return this._events;
+    }
+    
 
     addEvent(event: Event): void {
         this._events.set(event.id, event);
         console.log(`${event.name} added.`);
     }
 
+    //@listDecorator
     listEvents(): void {
         this._events.forEach(event => {
             console.log(event.name);
